@@ -13,8 +13,7 @@ let imagesSchema = mongoose.Schema({
     let arrayOfImageObjs = arrayOfImageObjs.map(image => {
       return {
         image_id: image.id,
-        url: image.url,
-        description: image.description
+        url: image.url
       };
     });
 
