@@ -7,7 +7,7 @@ class HorizontalSlider extends Component {
     super(props)
 
     this.state = {
-      images : [],
+      manyUrls : [],
       current_card : 1,
       current_img_width_as_percentage: 0
     }
@@ -23,14 +23,17 @@ class HorizontalSlider extends Component {
 
   componentDidMount() {
     axios.get('/api/images')
-      .then( res => {
+      .then(result => {
+        var inputURLS = [];
+        for (let i=0; i<result.data.length; i++) {
+          inputURLS.push(result.data[i].url);
+        }
         this.setState({
-          images : res.data
-        });
+          manyUrls: inputURLS
+        })
       })
-      .catch( error => {
-        console.log('Error getting images in slider: ' + error);
-    });
+      .catch((err) => console.log('error in axios get request for data: ', err));
+
     // window.addEventListener('load', () => {
       this.view_port.style.width = `${this.state.current_img_width_as_percentage}vw`;
       const img_width_in_pixels = this.card_container.children[0].getBoundingClientRect().width;
@@ -112,10 +115,17 @@ class HorizontalSlider extends Component {
 
         <div ref={ref_id => this.view_port = ref_id} className="view-port" style={styles.view_port}>
           <div ref={ref_id => this.card_container = ref_id} className="card-container" style={styles.card_container}>
-            <Card card_number='https://feccampingimages.s3.us-east-2.amazonaws.com/glen-jackson-mzZVGFfMOkA-unsplash.jpg' resize_width={this.state.current_img_width_as_percentage}/>
-            <Card card_number='https://feccampingimages.s3.us-east-2.amazonaws.com/myles-tan-IWCljYv1TJw-unsplash.jpg' resize_width={this.state.current_img_width_as_percentage}/>
-            <Card card_number="https://feccampingimages.s3.us-east-2.amazonaws.com/jesse-gardner-wTVr4HR4SBI-unsplash.jpg" resize_width={this.state.current_img_width_as_percentage}/>
-            <Card card_number="https://feccampingimages.s3.us-east-2.amazonaws.com/grant-ritchie-c1XZjkM_-q8-unsplash.jpg" resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[1]} resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[2]} resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[3]} resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[4]} resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[5]} resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[6]} resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[7]} resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[8]} resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[9]} resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[10]} resize_width={this.state.current_img_width_as_percentage}/>
+            <Card card_number={this.state.manyUrls[11]} resize_width={this.state.current_img_width_as_percentage}/>
           </div>
         </div>
       </div>

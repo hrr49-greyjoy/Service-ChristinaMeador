@@ -1,9 +1,29 @@
 import React, {Component} from "react";
+import ReactDom from 'react-dom';
+import axios from 'axios';
 import Card from "./imageCard.jsx";
 
 class StaticSlider extends Component {
   constructor(props){
     super(props)
+
+    this.state = {
+      staticUrls: []
+    }
+  }
+
+  componentDidMount() {
+    axios.get('/api/images')
+        .then(result => {
+          var inputURLS = [];
+          for (let i=0; i<result.data.length; i++) {
+            inputURLS.push(result.data[i].url);
+          }
+          this.setState({
+            staticUrls: inputURLS
+          })
+        })
+        .catch((err) => console.log('error in axios get request for data: ', err));
   }
 
   render() {
@@ -11,10 +31,10 @@ class StaticSlider extends Component {
       <div>
         <div className="view-port" style={styles.view_port}>
           <div className="image-container" style={styles.card_container}>
-            <img src="https://feccampingimages.s3.us-east-2.amazonaws.com/glen-jackson-mzZVGFfMOkA-unsplash.jpg" style={styles.image} />
-            <img src="https://feccampingimages.s3.us-east-2.amazonaws.com/myles-tan-IWCljYv1TJw-unsplash.jpg" style={styles.image} />
-            <img src="https://feccampingimages.s3.us-east-2.amazonaws.com/jesse-gardner-wTVr4HR4SBI-unsplash.jpg" style={styles.image} />
-            <img src="https://feccampingimages.s3.us-east-2.amazonaws.com/grant-ritchie-c1XZjkM_-q8-unsplash.jpg" style={styles.image} />
+            <img src={this.state.staticUrls[1]} style={styles.image} />
+            <img src={this.state.staticUrls[2]} style={styles.image} />
+            <img src={this.state.staticUrls[3]} style={styles.image} />
+            <img src={this.state.staticUrls[4]} style={styles.image} />
           </div>
         </div>
       </div>
@@ -29,17 +49,17 @@ const styles = {
     left: "50%",
     transform: "translate(-50%,-50%)",
     width: '100vw',
-    height: "500px"
+    height: "600px"
   },
   card_container: {
     display: "flex",
     flexDirection: 'flex-start',
-    height: '500px',
+    height: '600px',
     objectFit: "cover"
   },
   image: {
     float: 'left',
-    width: '700px',
+    width: '70vw',
     height: 'auto',
     borderLeft: '15px solid white',
     objectFit: "cover"

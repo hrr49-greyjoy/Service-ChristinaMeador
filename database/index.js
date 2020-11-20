@@ -8,7 +8,9 @@ const db = mongoose.connection;
 let imagesSchema = new mongoose.Schema({
   title: String,
   description: String,
-  url: String
+  url: String,
+  postedOn: String,
+  name: String
 });
 
 let Image = mongoose.model('Image', imagesSchema);
