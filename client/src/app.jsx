@@ -16,18 +16,27 @@ function App() {
         <ImageInfo />
       </Modal>)}
 
-      <Container onClick={() => setStatus(true)}>
+      <div style={styles.container} onClick={() => setStatus(true)}>
         <StaticSlider />
-      </Container>
+      </div>
     </div>
   );
 }
 
-const Container = styled.div`
-  position: relative;
-  overflow: hidden;
-  height: 100vh;
-  width: 100vw;
-`;
+const styles = {
+  container: {
+    position: 'relative',
+    overflow: 'hidden',
+    height: '100vh',
+    width: '100vw'
+  }
+}
+
+// const Container = styled.div`
+//   position: relative;
+//   overflow: hidden;
+//   height: 100vh;
+//   width: 100vw;
+// `;
 
 export default App;

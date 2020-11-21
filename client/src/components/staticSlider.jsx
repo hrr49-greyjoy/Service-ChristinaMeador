@@ -29,8 +29,8 @@ class StaticSlider extends Component {
   render() {
     return (
       <div>
-        <div className="view-port" style={styles.view_port}>
-          <div className="image-container" style={styles.card_container}>
+        <div style={styles.view_port}>
+          <div style={styles.card_container}>
             <img src={this.state.staticUrls[1]} style={styles.image} />
             <img src={this.state.staticUrls[2]} style={styles.image} />
             <img src={this.state.staticUrls[3]} style={styles.image} />

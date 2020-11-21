@@ -2,29 +2,22 @@ import React from "react";
 import FontAwesome from 'react-fontawesome';
 import styled from 'styled-components';
 
-const Content = styled.div`
-  margin: 15% auto;
-  background-color: white;
-  border-radius: 0.25rem;
-  width: 50vw;
-  padding: 2rem;
-  position: relative;
-`;
 
-const Overlay = styled.div`
-  position: absolute;
-  display: block;
-  overflow: auto;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0,0,0,0.9);
-  z-index: 999;
-  cursor: pointer;
-`;
+
+// const Overlay = styled.div`
+//   position: absolute;
+//   display: block;
+//   overflow: auto;
+//   width: 100%;
+//   height: 100%;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background-color: rgba(0,0,0,0.9);
+//   z-index: 999;
+//   cursor: pointer;
+// `;
 
 const Modal = (props) => {
   const { closeModal } = props;
@@ -48,14 +41,32 @@ const Modal = (props) => {
     />
   );
 
+  const styles = {
+    overlay: {
+      position: 'absolute',
+      display: 'block',
+      overflow: 'auto',
+      width: '100%',
+      height: '100%',
+      top: '0',
+      left: '0',
+      right: '0',
+      bottom: '0',
+      backgroundColor: 'rgba(0,0,0,0.9)',
+      zIndex: '999',
+      cursor: 'pointer'
+    }
+  }
+
   return (
-    <Overlay>
+    <div style={styles.overlay}>
 
         { closeicon() }
         {props.children}
 
-    </Overlay>
+    </div>
   );
 };
 
 export default Modal;
+

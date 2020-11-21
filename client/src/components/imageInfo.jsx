@@ -36,87 +36,153 @@ class ImageInfo extends React.Component {
   render() {
     return (
       <div>
-        <HelpfulBtn>{ thumbsup() }✓ Helpful   4</HelpfulBtn>
-        <ProfilePic />
-        <Name>{this.state.name}</Name>
-        <PostedOn>{this.state.postedOn}</PostedOn>
-        <Location>{ mappinicon() }{this.state.title}</Location>
-        <Description>{this.state.description}</Description>
-        <Help>❂ Help</Help>
+        <button style={styles.helpfulBtn}>{ thumbsup() }✓ Helpful   4</button>
+        <div style={styles.profilePic} />
+        <h1 style={styles.name}>{this.state.name}</h1>
+        <h3 style={styles.postedOn}>{this.state.postedOn}</h3>
+        <h1 style={styles.location}>{ mappinicon() }{this.state.title}</h1>
+        <h1 style={styles.description}>{this.state.description}</h1>
+        <button style={styles.help}>❂ Help</button>
       </div>
     )
   }
 }
 
-const ProfilePic = styled.div`
-  background-image: url('https://i.imgur.com/NKdeiGH.jpg');
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  position: absolute;
-  left: 24vw;
-  top: 2vh;
-`;
+const styles = {
+  helpfulBtn: {
+    backgroundColor: '#40d9ac',
+    color: '#FFF',
+    position: 'absolute',
+    right: '10vw',
+    top: '4vh',
+    padding: '15px 32px',
+    fontSize: '1.07143rem',
+  },
+  profilePic: {
+    backgroundImage: "url('https://i.imgur.com/NKdeiGH.jpg');",
+    height: '80px',
+    width: '80px',
+    borderRadius: '50%',
+    position: 'absolute',
+    left: '24vw',
+    top: '2vh',
+  },
+  name: {
+    color: 'white',
+    fontSize: '30px',
+    fontFamily: 'sans-serif',
+    position: 'absolute',
+    left: '30vw',
+    top: '2vh',
+  },
+  postedOn: {
+    color: '#5C5C5C',
+    fontSize: '12px',
+    fontFamily: 'sans-serif',
+    position: 'absolute',
+    left: '30vw',
+    top: '8vh'
+  },
+  location: {
+    color: 'white',
+    fontSize: '16px',
+    fontFamily: 'sans-serif',
+    position: 'absolute',
+    left: '25vw',
+    top: '12vh',
+  },
+  description: {
+    color: 'white',
+    fontSize: '16px',
+    fontFamily: 'sans-serif',
+    textAlign: 'center',
+    maxWidth: '31vw',
+    position: 'absolute',
+    left: '36vw',
+    bottom: '5vh',
+  },
+  help: {
+    backgroundColor: '#40d9ac',
+    color: '#1D5242',
+    position: 'absolute',
+    bottom: '2vh',
+    right: '2vw',
+    textAlign: 'center',
+    padding: '15px 32px',
+    borderRadius: '999rem',
+    fontSize: '1.07143rem',
+  }
+}
 
-const Name = styled.h1`
-  color: white;
-  font-size: 30px;
-  font-family: sans-serif;
-  position: absolute;
-  left: 30vw;
-  top: 2vh;
-`;
+// const ProfilePic = styled.div`
+//   background-image: url('https://i.imgur.com/NKdeiGH.jpg');
+//   height: 80px;
+//   width: 80px;
+//   border-radius: 50%;
+//   position: absolute;
+//   left: 24vw;
+//   top: 2vh;
+// `;
 
-const PostedOn = styled.h3`
-  color: #5C5C5C;
-  font-size: 12px;
-  font-family: sans-serif;
-  position: absolute;
-  left: 30vw;
-  top: 8vh;
-`;
+// const Name = styled.h1`
+//   color: white;
+//   font-size: 30px;
+//   font-family: sans-serif;
+//   position: absolute;
+//   left: 30vw;
+//   top: 2vh;
+// `;
 
-const Location = styled.h1`
-  color: white;
-  font-size: 16px;
-  font-family: sans-serif;
-  position: absolute;
-  left: 25vw;
-  top: 12vh;
-`;
+// const PostedOn = styled.h3`
+  // color: #5C5C5C;
+  // font-size: 12px;
+  // font-family: sans-serif;
+  // position: absolute;
+  // left: 30vw;
+  // top: 8vh;
+// `;
 
-const Description = styled.h1`
-  color: white;
-  font-size: 16px;
-  font-family: sans-serif;
-  text-align: center;
-  max-width: 31vw;
-  position: absolute;
-  left: 36vw;
-  bottom: 5vh;
-`;
+// const Location = styled.h1`
+//   color: white;
+//   font-size: 16px;
+//   font-family: sans-serif;
+//   position: absolute;
+//   left: 25vw;
+//   top: 12vh;
+// `;
 
-const HelpfulBtn = styled.button`
-  background-color: #40d9ac;
-  color: #FFF;
-  position: absolute;
-  right: 10vw;
-  top: 4vh;
-  padding: 15px 32px;
-  font-size: 1.07143rem;
-`;
+// const Description = styled.h1`
+//   color: white;
+//   font-size: 16px;
+//   font-family: sans-serif;
+//   text-align: center;
+//   max-width: 31vw;
+//   position: absolute;
+//   left: 36vw;
+//   bottom: 5vh;
+// `;
 
-const Help = styled.button`
-  background-color: #40d9ac;
-  color: #1D5242;
-  position: absolute;
-  bottom: 2vh;
-  right: 2vw;
-  text-align: center;
-  padding: 15px 32px;
-  border-radius: 999rem;
-  font-size: 1.07143rem;
-`;
+// const HelpfulBtn = styled.button`
+  // background-color: #40d9ac;
+  // color: #FFF;
+  // position: absolute;
+  // right: 10vw;
+  // top: 4vh;
+  // padding: 15px 32px;
+  // font-size: 1.07143rem;
+// `;
+
+// const Help = styled.button`
+//   background-color: #40d9ac;
+//   color: #1D5242;
+//   position: absolute;
+//   bottom: 2vh;
+//   right: 2vw;
+//   text-align: center;
+//   padding: 15px 32px;
+//   border-radius: 999rem;
+//   font-size: 1.07143rem;
+// `;
 
 const thumbsup = () => {
   <FontAwesome
