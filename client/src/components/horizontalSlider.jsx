@@ -153,14 +153,14 @@ const styles = {
   previous_button: {
     width: 50,
     height: 50,
-    position: 'fixed',
+    position: 'absolute',
     left: '-50vw',
     marginLeft: '15px'
   },
   next_button: {
     width: 50,
     height: 50,
-    position: 'fixed',
+    position: 'absolute',
     right: '-50vw',
     marginRight: '15px'
   },

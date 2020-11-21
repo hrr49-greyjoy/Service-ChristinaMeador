@@ -12,7 +12,7 @@ const Content = styled.div`
 `;
 
 const Overlay = styled.div`
-  position: fixed;
+  position: absolute;
   display: block;
   overflow: auto;
   width: 100%;

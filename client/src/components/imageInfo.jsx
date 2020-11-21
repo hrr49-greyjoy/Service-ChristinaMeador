@@ -53,7 +53,7 @@ const ProfilePic = styled.div`
   height: 80px;
   width: 80px;
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   left: 24vw;
   top: 2vh;
 `;
@@ -62,7 +62,7 @@ const Name = styled.h1`
   color: white;
   font-size: 30px;
   font-family: sans-serif;
-  position: fixed;
+  position: absolute;
   left: 30vw;
   top: 2vh;
 `;
@@ -71,7 +71,7 @@ const PostedOn = styled.h3`
   color: #5C5C5C;
   font-size: 12px;
   font-family: sans-serif;
-  position: fixed;
+  position: absolute;
   left: 30vw;
   top: 8vh;
 `;
@@ -80,7 +80,7 @@ const Location = styled.h1`
   color: white;
   font-size: 16px;
   font-family: sans-serif;
-  position: fixed;
+  position: absolute;
   left: 25vw;
   top: 12vh;
 `;
@@ -91,7 +91,7 @@ const Description = styled.h1`
   font-family: sans-serif;
   text-align: center;
   max-width: 31vw;
-  position: fixed;
+  position: absolute;
   left: 36vw;
   bottom: 5vh;
 `;
@@ -99,7 +99,7 @@ const Description = styled.h1`
 const HelpfulBtn = styled.button`
   background-color: #40d9ac;
   color: #FFF;
-  position: fixed;
+  position: absolute;
   right: 10vw;
   top: 4vh;
   padding: 15px 32px;
@@ -109,7 +109,7 @@ const HelpfulBtn = styled.button`
 const Help = styled.button`
   background-color: #40d9ac;
   color: #1D5242;
-  position: fixed;
+  position: absolute;
   bottom: 2vh;
   right: 2vw;
   text-align: center;
@@ -128,7 +128,7 @@ const thumbsup = () => {
       cursor: 'pointer',
       backgroundColor: 'transparent',
       border: 0,
-      positon: 'fixed',
+      positon: 'absolute',
       top: '8vh',
       right: '10vw',
       zIndex: '1000'

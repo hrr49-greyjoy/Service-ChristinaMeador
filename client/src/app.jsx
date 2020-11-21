@@ -11,7 +11,6 @@ function App() {
   const [status, setStatus] = useState(false);
   return (
     <div>
-
       { status && (<Modal closeModal={() => setStatus(false)}>
         <HorizontalSlider />
         <ImageInfo />
@@ -25,7 +24,7 @@ function App() {
 }
 
 const Container = styled.div`
-  position: fixed;
+  position: relative;
   overflow: hidden;
   height: 100vh;
   width: 100vw;
