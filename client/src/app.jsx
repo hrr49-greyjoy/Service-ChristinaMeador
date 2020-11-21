@@ -11,10 +11,12 @@ function App() {
   const [status, setStatus] = useState(false);
   return (
     <div>
-      { status && (<Modal closeModal={() => setStatus(false)}>
-        <HorizontalSlider />
-        <ImageInfo />
-      </Modal>)}
+      <div style={styles.modalContainer}>
+        { status && (<Modal closeModal={() => setStatus(false)}>
+          <HorizontalSlider />
+          <ImageInfo />
+        </Modal>)}
+      </div>
 
       <div style={styles.container} onClick={() => setStatus(true)}>
         <StaticSlider />
@@ -29,7 +31,10 @@ const styles = {
     overflow: 'hidden',
     height: '100vh',
     width: '100vw'
-  }
+  },
+  // modalContainer: {
+  //   position: 'absolute'
+  // }
 }
 
 // const Container = styled.div`

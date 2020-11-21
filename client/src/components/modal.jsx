@@ -2,8 +2,6 @@ import React from "react";
 import FontAwesome from 'react-fontawesome';
 import styled from 'styled-components';
 
-
-
 // const Overlay = styled.div`
 //   position: absolute;
 //   display: block;
@@ -55,13 +53,26 @@ const Modal = (props) => {
       backgroundColor: 'rgba(0,0,0,0.9)',
       zIndex: '999',
       cursor: 'pointer'
+    },
+    xBtn: {
+      fontSize: '30px',
+      fontColor: '#FFF',
+      padding: '10px',
+      cursor: 'pointer',
+      backgroundColor: 'transparent',
+      border: 0,
+      position: 'absolute',
+      top: '0.3rem',
+      right: '0.5rem',
+      zIndex: '1000'
     }
   }
 
   return (
     <div style={styles.overlay}>
 
-        { closeicon() }
+        {/* { closeicon() } */}
+        <h1 onClick={closeModal}>X</h1>
         {props.children}
 
     </div>
