@@ -16,8 +16,8 @@ function App() {
         <ImageInfo />
       </Modal>)}
 
-      <Container>
-        <button onClick={() => setStatus(true)}><StaticSlider /></button>
+      <Container onClick={() => setStatus(true)}>
+        <StaticSlider />
       </Container>
     </div>
   );
