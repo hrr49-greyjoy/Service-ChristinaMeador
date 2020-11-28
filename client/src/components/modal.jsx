@@ -71,8 +71,7 @@ const Modal = (props) => {
   return (
     <div style={styles.overlay}>
 
-        { { closeicon() } }
-<!--         <h1 onClick={closeModal}>X</h1> -->
+        { closeicon() }
         {props.children}
 
     </div>
